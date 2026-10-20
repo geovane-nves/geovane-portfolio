@@ -1,0 +1,395 @@
+/* ==========================================================================
+   sections.css — Sobre, Habilidades, Experiências, Projetos, Blog e Contato
+   (v2.0). As "pastas" (.painel) vêm de style.css; aqui ficam só os conteúdos.
+   Dentro de cada corpo os blocos são posicionados com as medidas do layout
+   Desktop de 1366px (origem = canto superior esquerdo do .painel__corpo).
+   ========================================================================== */
+
+/* tamanhos usados só aqui */
+:root {
+  --fs-destaque-info: 18px;   /* "Fora do terminal" (Red Rose) */
+}
+
+
+/* ==========================================================================
+   1. SOBRE MIM
+   ========================================================================== */
+.sobre { margin-top: 113px; }          /* a primeira pasta fica mais longe da faixa de tecnologias */
+.sobre .painel__corpo { height: 715px; }
+
+/* selo "Disponível para projetos" (fica na aba) */
+.sobre__selo {
+  position: absolute;
+  top: 40px;
+  height: 30px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--escuro);
+  font-size: 12px;
+  line-height: 30px;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* foto (Profile.png já traz a moldura, o fundo laranja e a fita) */
+.sobre__foto {
+  position: absolute;
+  left: 100px;
+  top: -54px;
+  width: 458px;
+}
+.sobre__local {
+  position: absolute;
+  left: 389px;
+  top: 474px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 20px;
+}
+.sobre__local img { width: 24px; height: 24px; }
+
+/* texto */
+.sobre__texto {
+  position: absolute;
+  left: 708px;
+  top: 59px;
+  width: 729px;
+}
+.sobre__ola {
+  margin-bottom: 15px;
+  text-align: right;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 58px;
+}
+.sobre__texto p { text-align: justify; margin-bottom: 28px; }
+.sobre__texto p:last-of-type { margin-bottom: 0; }
+
+.sobre__redes {
+  position: absolute;
+  right: 93px;
+  top: 494px;
+  display: flex;
+  gap: 13px;
+}
+.sobre__redes img { width: 34px; height: 34px; object-fit: contain; }
+.sobre__redes a:hover { opacity: .7; }
+
+/* cartões "Fora do terminal" */
+.sobre__infos {
+  position: absolute;
+  left: 78px;
+  top: 562px;
+  display: grid;
+  grid-template-columns: repeat(3, 430px);
+  column-gap: 49px;
+}
+.info {
+  height: 76px;
+  padding: 6px 23px 0;
+  background: url('../images/shapes/CartaoInfo.svg') no-repeat;
+  width: 430px;
+  background-size: 100% 100%;
+}
+.info h3 {
+  font-family: var(--fonte-destaque);
+  font-weight: 400;
+  font-size: var(--fs-destaque-info);
+  line-height: 30px;
+  color: var(--laranja);
+}
+.info p { font-size: 16px; line-height: 30px; }
+
+
+/* ==========================================================================
+   2. HABILIDADES
+   ========================================================================== */
+.habilidades .painel__corpo { height: 714px; }
+
+/* lista com barras de nível (--n = nível de 0 a 100%) */
+.niveis {
+  position: absolute;
+  left: 100px;
+  top: 22px;
+}
+.nivel {
+  display: grid;
+  grid-template-columns: 42px 178px 280px;
+  align-items: center;
+  height: 67px;
+}
+.nivel img { height: 36px; width: auto; max-width: 34px; }
+.nivel__nome { font-weight: 500; font-size: 28px; line-height: 40px; white-space: nowrap; }
+
+.nivel__barra {
+  position: relative;
+  height: 3px;
+  background: var(--branco);
+}
+.nivel__barra::after {                 /* a bolinha */
+  content: '';
+  position: absolute;
+  left: var(--n);
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border: 3px solid var(--branco);
+  border-radius: 50%;
+  background: var(--painel);
+}
+
+/* cartões do meio */
+.habilidades__cartoes {
+  position: absolute;
+  left: 720px;
+  top: -15px;
+  width: 379px;
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+}
+.cartao-escuro {
+  height: 195px;
+  padding: 27px 24px 0;
+  background: url('../images/shapes/CartaoP_Escuro.svg') no-repeat;
+  background-size: 100% 100%;
+}
+.cartao-escuro h3 {
+  font-family: var(--fonte-destaque);
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 30px;
+  color: var(--laranja);
+}
+.cartao-escuro p { margin-top: 16px; }
+
+/* persona */
+.habilidades__persona {
+  position: absolute;
+  left: 1030px;
+  top: -50px;
+  width: 560px;
+  pointer-events: none;
+}
+
+
+/* ==========================================================================
+   3. EXPERIÊNCIAS (linha do tempo)
+   ========================================================================== */
+.experiencias__lista {
+  position: relative;
+  padding: 33px 55px 81px 148px;
+}
+
+/* barra vertical */
+.experiencias__lista::before {
+  content: '';
+  position: absolute;
+  left: 71px;
+  top: 33px;
+  bottom: 89px;
+  width: 16px;
+  background: var(--branco);
+}
+
+.experiencia { position: relative; }
+.experiencia + .experiencia { margin-top: 47px; }
+
+/* círculo da linha do tempo */
+.experiencia::before {
+  content: '';
+  position: absolute;
+  left: -98px;
+  top: 50%;
+  width: 56px;
+  height: 56px;
+  transform: translateY(-50%);
+  border: 3px solid var(--branco);
+  border-radius: 50%;
+  background: var(--painel);
+}
+
+.experiencia h3 { font-weight: 700; font-size: 20px; line-height: 30px; }
+.experiencia h3 span {
+  text-decoration: underline var(--laranja);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.experiencia h3 b { margin: 0 4px; color: var(--laranja); }
+.experiencia p { text-align: justify; }
+.experiencia p strong { font-weight: 700; }
+
+
+/* ==========================================================================
+   4. PROJETOS
+   ========================================================================== */
+.projetos .painel__corpo { height: 340px; }
+
+.projetos__lista {
+  position: absolute;
+  left: 67px;
+  top: 61px;
+  display: grid;
+  grid-template-columns: repeat(3, 470px);
+  column-gap: 18px;
+}
+
+.card-p {
+  display: block;
+  width: 420px;
+  height: 225px;
+  color: var(--texto-escuro);
+  background: url('../images/projects/CartaoP.svg') no-repeat;
+  background-size: 100% 100%;
+  transition: transform .2s;
+}
+.card-p:hover { transform: translateY(-6px); }
+.card-p img {
+  height: 114.3px;
+  object-fit: cover;
+  border-radius: 19px 19px 0 0;
+}
+.card-p h3 { padding: 16px 20px; font-weight: 600; font-size: 15px; line-height: 23px; }
+
+
+/* ==========================================================================
+   5. BLOG ("Últimas notícias")
+   ========================================================================== */
+.blog .painel__corpo { height: 684px; }
+
+.blog_else{
+  position: absolute;
+  left: 50%;
+  top: 230px;
+  transform: translateX(-50%);
+}
+
+.blog__lista {
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 320px);
+  gap: 27px 21px;
+}
+
+.card-b {
+  position: relative;
+  display: block;
+  height: 264px;
+  width: 300px;
+  padding: 19px 19px 0;
+  color: var(--texto-escuro);
+  background: url('../images/projects/CartaoB.svg') no-repeat;
+  background-size: 100% 100%;
+  transition: transform .2s;
+}
+.card-b:hover { transform: translateY(-6px); }
+.card-b h3 { font-weight: 600; font-size: 15px; line-height: 23px; }
+.card-b p { width: 230px; margin-top: 14px; font-size: 12px; line-height: 15px; }
+.card-b span {
+  position: absolute;
+  left: 19px;
+  bottom: 20px;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+/* card laranja: o mesmo formato girado de cabeça para baixo */
+.card-b--laranja { color: var(--branco); background: none; isolation: isolate; }
+.card-b--laranja::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url('../images/projects/CartaoB_Laranja.svg') no-repeat;
+  background-size: 100% 100%;
+  transform: rotate(180deg);
+}
+.card-b--laranja h3 { width: 150px; margin-left: auto; text-align: right; }
+.card-b--laranja p { width: 209px; margin-top: 8px; padding-left: 14px; font-weight: 600; }
+.card-b--laranja span { left: 33px; }
+
+
+/* ==========================================================================
+   6. CONTATO
+   ========================================================================== */
+.contato .painel__corpo {
+  height: 691px;
+  overflow: hidden;
+  border-radius: 20px 0 var(--raio-painel) var(--raio-painel);   /* corta a persona na borda de baixo */
+}
+
+.contato__titulo {
+  position: absolute;
+  left: 57px;
+  top: 35px;
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 68px;
+}
+.contato__texto {
+  position: absolute;
+  left: 52px;
+  top: 195px;
+  width: 493px;
+  text-align: justify;
+}
+.contato__persona {
+  position: absolute;
+  left: 110px;
+  top: 157px;
+  width: 380px;
+}
+
+/* janela + formulário */
+.janela {
+  position: absolute;
+  left: 720px;
+  top: 0px;
+  width: 692px;
+  height: 620px;
+  padding: 0 7px 3px;
+  border-radius: 56px 56px 32px 32px;
+  background: var(--escuro);
+  box-shadow: 8px 10px 14px rgba(0, 0, 0, .35);
+}
+.janela__barra { display: flex; align-items: center; gap: 6px; height: 74px; padding-left: 16px; }
+.bolinha { width: 24px; height: 24px; border-radius: 50%; }
+.vermelha { background: #e02020; }
+.amarela  { background: #e0a31c; }
+.verde    { background: #3cc31c; }
+
+.form { padding: 40px; border-radius: 0 0 28px 28px; background: var(--fundo); height: 537px; }
+.form h3 { margin-bottom: 1px; font-weight: 500; font-size: 24px; line-height: 34px; }
+.form label { display: block; margin-top: 13px; font-size: 12px; line-height: 18px; }
+.form__linha { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+
+.form input, .form textarea {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-top: 3px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: var(--escuro);
+  font-size: 12px;
+  outline: none;
+}
+.form textarea { height: 167px; padding: 12px; resize: none; }
+.form ::placeholder { color: rgba(255, 255, 255, .85); }
+.form input:user-invalid, .form textarea:user-invalid { border-color: #ff5a3c; }
+.form input:focus, .form textarea:focus { border-color: var(--laranja); }
+.form .btn { margin-top: 25px; }
+
+
+/* posição horizontal do título quando a aba fica à direita */
+.projetos .painel__titulo { left: 54px; }
+.contato  .painel__titulo { left: 24px; }

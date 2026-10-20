@@ -1,0 +1,81 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Geovane Neves | Portfólio{% endblock %}</title>
+  <link rel="icon" href="{% static 'images/favicon.ico' %}">
+
+  <!-- Fontes do Google: Poppins (600), Quattrocento (títulos), Playfair Display (itálico da capa),
+       JetBrains Mono (mão ASCII) e Red Rose (NOVA na v2.0) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,600&family=Quattrocento:wght@400;700&family=Playfair+Display:ital@1&family=JetBrains+Mono&family=Red+Rose:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sections.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+  <!-- ================= MENU ================= -->
+  <header class="navbar">
+    <nav>
+      <ul class="navbar__links">
+        <li><a href="/#home" class="ativo">Home</a></li>
+        <li><a href="/#sobre">Sobre Mim</a></li>
+        <li><a href="/#habilidades">Habilidades</a></li>
+        <li><a href="/#experiencias">Experiências</a></li>
+        <li><a href="/#projetos">Projetos</a></li>
+        <li><a href="/#blog">Blog</a></li>
+        <li><a href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer class="footer">
+    <div class="footer__marca">
+      <img class="footer__avatar" src="{% static 'images/AvatarRodape.png' %}" alt="">
+      <span class="footer__nome">Geovane</span>
+    </div>
+    <p class="footer__texto">Desenvolvendo soluções através de código, lógica e criatividade.</p>
+    <p class="footer__copy">&copy; 2026 <a class="laranja" href="mailto:geonevesrodrigues@gmail.com">Geovanedev.com</a></p>
+
+    <div class="footer__nav">
+      <h3 class="footer__titulo">Navegação</h3>
+      <ul>
+        <li><a href="/#sobre">Sobre mim</a></li>
+        <li><a href="/#experiencias">Experiências</a></li>
+        <li><a href="/#projetos">Projetos</a></li>
+        <li><a href="/#blog">Publicações</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__contato">
+      <h3 class="footer__titulo">Contato</h3>
+      <div class="footer__redes">
+        <a href="https://github.com/geovane-nves" target="_blank" rel="noopener"><img src="{% static 'images/icons/GitHub.svg' %}" alt="GitHub"></a>
+        <a href="https://instagram.com/geovane.nves" target="_blank" rel="noopener"><img src="{% static 'images/icons/Instagram.svg' %}" alt="Instagram"></a>
+        <a href="https://linkedin.com/in/geovane-nves" target="_blank" rel="noopener"><img src="{% static 'images/icons/Linkedin.svg' %}" alt="LinkedIn"></a>
+      </div>
+    </div>
+
+    <div class="footer__linha"></div>
+
+    <!-- palavra "Geovane" gigante (imagem com degradê que some para baixo; o rodapé corta o excesso) -->
+    <img class="footer__gigante" src="{% static 'images/GeovaneRodape.png' %}" alt="" aria-hidden="true">
+  </footer>
+
+  <script src="{% static 'js/animations.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

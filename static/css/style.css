@@ -1,0 +1,157 @@
+/* ==========================================================================
+   style.css — estilos gerais (v2.0)
+   Fontes, variáveis, reset, textos comuns, botão e a "pasta" (painel) que
+   envolve as seções. Medidas tiradas do layout Desktop de 1366px.
+   ========================================================================== */
+
+
+/* ---------- FONTES ----------
+   Poppins: arquivos em static/fonts (o peso 600 vem do Google Fonts, no base.html).
+   Quattrocento, Playfair Display, JetBrains Mono e Red Rose: Google Fonts (base.html). */
+@font-face { font-family: 'Poppins'; font-weight: 300; src: url('../fonts/Poppins-Light.ttf'); }
+@font-face { font-family: 'Poppins'; font-weight: 400; src: url('../fonts/Poppins-Regular.ttf'); }
+@font-face { font-family: 'Poppins'; font-weight: 500; src: url('../fonts/Poppins-Medium.ttf'); }
+@font-face { font-family: 'Poppins'; font-weight: 700; src: url('../fonts/Poppins-Bold.ttf'); }
+@font-face { font-family: 'Poppins'; font-weight: 700; font-style: italic; src: url('../fonts/Poppins-BoldItalic.ttf'); }
+
+
+/* ---------- VARIÁVEIS ---------- */
+:root {
+  color-scheme: dark;
+
+  /* cores */
+  --fundo: #323234;          /* fundo da página */
+  --painel: #3c3c3d;         /* painéis (as "pastas") */
+  --escuro: #1e1e1e;         /* pílulas, janela e campos do formulário */
+  --pilula: #191b1d;         /* item ativo do menu */
+  --rodape: #282828;
+  --mao-tinta: #4c4b4b;      /* mão ASCII da capa: caractere em repouso */
+  --mao-brilho: #8d8d98;     /* mão ASCII da capa: caractere durante a troca */
+  --laranja: #e2411f;
+  --branco: #ffffff;
+  --texto-escuro: #1a1a1a;   /* texto dentro dos cartões brancos */
+
+  /* famílias */
+  --fonte-texto: 'Poppins', sans-serif;
+  --fonte-titulo: 'Umbara', 'Quattrocento', Georgia, serif;
+  --fonte-capa: 'Playfair Display', Georgia, serif;
+  --fonte-destaque: 'Red Rose', 'Poppins', sans-serif;   /* NOVA na v2.0 */
+
+  /* tamanhos de texto — mexa aqui para ajustar a escala da página inteira */
+  --fs-corpo: 20px;          --lh-corpo: 30px;
+  --fs-menu: 21px;
+  --fs-titulo-secao: 40px;   --lh-titulo-secao: 68px;
+  --fs-capa: 70px;           --lh-capa: 72px;
+  --fs-destaque: 22px;       /* títulos em Red Rose dentro dos cartões */
+  --fs-rodape-titulo: 36px;  /* "Navegação", "Contato" em Red Rose */
+
+  /* layout */
+  --largura-painel: 85%;
+  --raio-painel: 70px;
+  --espaco-paineis: 88px;    /* distância entre uma "pasta" e outra */
+}
+
+
+/* ---------- RESET ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  min-width: 1366px;
+  background: var(--fundo);
+  color: var(--branco);
+  font-family: var(--fonte-texto);
+  font-size: var(--fs-corpo);
+  line-height: var(--lh-corpo);
+  overflow-x: hidden;
+}
+
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+button, input, textarea { font: inherit; color: inherit; }
+
+
+/* ---------- TEXTOS COMUNS ---------- */
+.laranja { color: var(--laranja); }
+
+/* palavra em destaque: negrito, itálico e sublinhado pontilhado laranja */
+.hl {
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: underline dotted var(--laranja);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7px;
+}
+
+/* palavra em itálico serifado (capa e contato) */
+.destaque-capa {
+  font-family: var(--fonte-capa);
+  font-style: italic;
+  font-weight: 400;
+}
+.destaque-capa--sublinhado {
+  text-decoration: underline var(--laranja);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 9px;
+}
+
+
+/* ---------- BOTÃO ---------- */
+.btn {
+  display: inline-block;
+  height: 48px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--laranja);
+  color: var(--branco);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 48px;
+  cursor: pointer;
+}
+.btn:hover { filter: brightness(1.12); }
+
+
+/* ---------- PAINEL ("pasta" com aba) ----------
+   <section class="painel painel--esq|painel--dir">
+     <header class="painel__aba"><h2 class="painel__titulo">…</h2></header>
+     <div class="painel__corpo">…</div>
+   </section>
+   A aba é um SVG (static/images/shapes/AbaEsq.svg e AbaDir.svg):
+   --esq = aba alta à esquerda e título à direita; --dir = o contrário. */
+.painel {
+  position: relative;
+  width: var(--largura-painel);
+  margin: var(--espaco-paineis) auto 0;
+}
+
+.painel__aba {
+  position: relative;
+  height: 77px;
+  background: no-repeat top / 100% 100%;
+}
+.painel--esq .painel__aba { background-image: url('../images/shapes/AbaEsq.svg'); }
+.painel--dir .painel__aba { background-image: url('../images/shapes/AbaDir.svg'); }
+
+.painel__titulo {
+  position: absolute;
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  font-size: var(--fs-titulo-secao);
+  line-height: var(--lh-titulo-secao);
+  white-space: nowrap;
+}
+.painel--esq .painel__titulo { right: 50px; }
+.painel--dir .painel__titulo { left: 50px; }
+
+.painel__corpo {
+  position: relative;
+  margin-top: -1px;
+  background: var(--painel);
+  border-radius: 0 0 var(--raio-painel) var(--raio-painel);
+}
+.painel--esq .painel__corpo { border-top-right-radius: 20px; }
+.painel--dir .painel__corpo { border-top-left-radius: 20px; }

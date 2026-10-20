@@ -1,0 +1,78 @@
+/* ==========================================================================
+   footer.css — rodapé (v2.0)
+   Marca + texto, Navegação, Contato, linha branca e a palavra "Geovane"
+   gigante (imagem com degradê que some para baixo).
+   ========================================================================== */
+
+.footer {
+  position: relative;
+  height: 553px;
+  margin-top: 27px;
+  background: var(--rodape);
+  overflow: hidden;
+}
+
+/* marca */
+.footer__marca {
+  position: absolute;
+  left: 70px;
+  top: 56px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer__avatar { width: 52px; height: 52px; object-fit: contain; }
+.footer__nome {
+  font-family: var(--fonte-destaque);
+  font-size: 36px;
+  line-height: 48px;
+  color: var(--laranja);
+}
+
+.footer__texto {
+  position: absolute;
+  left: 69px;
+  top: 117px;
+  width: 340px;
+  text-align: justify;
+}
+.footer__copy {
+  position: absolute;
+  left: 69px;
+  top: 203px;
+}
+
+/* colunas */
+.footer__titulo {
+  font-family: var(--fonte-destaque);
+  font-weight: 400;
+  font-size: var(--fs-rodape-titulo);
+  line-height: 48px;
+  color: var(--laranja);
+}
+.footer__nav { position: absolute; left: 1182px; top: 66px; }
+.footer__nav li a:hover { color: var(--laranja); }
+.footer__nav ul { margin-top: 7px; padding-left: 2px; }
+
+.footer__contato { position: absolute; left: 1534px; top: 66px; }
+.footer__redes { display: flex; gap: 10px; margin-top: 5px; padding-left: 3px; }
+.footer__redes img { width: 34px; height: 34px; object-fit: contain; }
+.footer__redes a:hover { opacity: .7; }
+
+/* linha + palavra gigante */
+.footer__linha {
+  position: absolute;
+  left: 52px;
+  top: 287px;
+  width: 1700px;
+  height: 3px;
+  background: var(--branco);
+}
+.footer__gigante {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 266px;
+  width: 1711px;
+  pointer-events: none;
+}

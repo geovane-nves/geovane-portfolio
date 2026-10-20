@@ -1,0 +1,36 @@
+<!-- ================= HABILIDADES ================= -->
+  <section class="painel painel--dir habilidades" id="habilidades">
+    <header class="painel__aba">
+      <h2 class="painel__titulo">Habilidades</h2>
+    </header>
+
+    <div class="painel__corpo">
+      <!-- --n = nível da barra (0% a 100%) -->
+      <ul class="niveis">
+        {% for skill in skills %}
+        <li class="nivel" style="--n: {{ skill.level }}%">
+            <img src="{% static 'images/icons/Java.svg' %}" alt="">
+            <span class="nivel__nome">{{ skill.name }}</span>
+            <span class="nivel__barra"></span>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <div class="habilidades__cartoes">
+        <div class="cartao-escuro">
+          <h3>Principais tecnologias</h3>
+          <p>Java, Spring boot, Python, Django, PostgreSQL e Figma.</p>
+        </div>
+        <div class="cartao-escuro">
+          <h3>O que construo</h3>
+          <p>APIs, sistemas web, aplicações e soluções completas.</p>
+        </div>
+        <div class="cartao-escuro">
+          <h3>Engenharia de Software</h3>
+          <p>Scrum e Kanban, UML, Git Flow, MVC e DDD.</p>
+        </div>
+      </div>
+
+      <img class="habilidades__persona" src="{% static 'images/Persona.png' %}" alt="" aria-hidden="true">
+    </div>
+  </section>

@@ -1,0 +1,21 @@
+<!-- ================= BLOG ================= -->
+  <section class="painel painel--esq blog" id="blog">
+    <header class="painel__aba">
+      <h2 class="painel__titulo">Últimas notícias</h2>
+    </header>
+
+    <div class="painel__corpo">
+      <div class="blog__lista">
+        {% for post in posts %}
+        <a class="card-b {% if forloop.counter|divisibleby:3 %}card-b--laranja{% endif %}"
+          href="#">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.summary }}</p>
+            <span>Ler postagem ›</span>
+        </a>
+        {% empty %}
+        <p class="blog_else">Nenhuma publicação disponível no momento.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

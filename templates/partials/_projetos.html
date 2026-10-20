@@ -1,0 +1,26 @@
+ <!-- ================= PROJETOS ================= -->
+  <section class="painel painel--dir projetos" id="projetos">
+    <header class="painel__aba">
+      <h2 class="painel__titulo">Projetos</h2>
+    </header>
+
+    <div class="painel__corpo">
+      <div class="projetos__lista">
+        {% for project in projects %}
+        <a class="card-p"
+          href="{{ project.project_url|default:project.repository_url }}"
+          target="_blank"
+          rel="noopener">
+
+            {% if project.image %}
+                <img src="{{ project.image.url }}" alt="{{ project.title }}">
+            {% else %}
+                <img src="{% static 'images/Banner.png' %}" alt="">
+            {% endif %}
+
+            <h3>{{ project.title }}</h3>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

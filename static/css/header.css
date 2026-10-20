@@ -1,0 +1,34 @@
+/* ==========================================================================
+   header.css — cabeçalho e navegação (v2.0)
+   Pílulas centralizadas; o item ativo ganha o fundo escuro (#191b1d).
+   O destaque do item ativo é aplicado por static/js/animations.js.
+   ========================================================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 90px;
+  padding-top: 28px;
+  background: var(--fundo);
+}
+
+.navbar__links {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__links a {
+  display: block;
+  height: 39px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--fs-menu);
+  line-height: 39px;
+  white-space: nowrap;
+  transition: background .2s, color .2s;
+}
+
+.navbar__links a:hover { color: var(--laranja); }
+.navbar__links a.ativo { background: var(--pilula); color: var(--branco); }

@@ -1,0 +1,30 @@
+<!-- ================= EXPERIÊNCIAS ================= -->
+  <section class="painel painel--esq experiencias" id="experiencias">
+    <header class="painel__aba">
+      <h2 class="painel__titulo">Experiências</h2>
+    </header>
+
+    <div class="painel__corpo">
+      <div class="experiencias__lista">
+        {% for experience in experiences %}
+        <article class="experiencia">
+            <h3>
+                <span>{{ experience.title }}</span>
+                <b>·</b>
+                {{ experience.start_date|date:"Y" }} -
+                {% if experience.current %}
+                    ATUALMENTE
+                {% elif experience.end_date %}
+                    {{ experience.end_date|date:"Y" }}
+                {% else %}
+                    {{ experience.start_date|date:"Y" }}
+                {% endif %}
+            </h3>
+
+            <p>{{ experience.description }}</p>
+            <p><strong>{{ experience.organization }}</strong></p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
