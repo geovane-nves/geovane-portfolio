@@ -1,21 +1,64 @@
-<!-- ================= BLOG ================= -->
-  <section class="painel painel--esq blog" id="blog">
+{% load static %}
+<section class="painel painel--esq blog" id="blog">
     <header class="painel__aba">
-      <h2 class="painel__titulo">Últimas notícias</h2>
+        <h2 class="painel__titulo">Últimas notícias</h2>
     </header>
 
     <div class="painel__corpo">
-      <div class="blog__lista">
-        {% for post in posts %}
-        <a class="card-b {% if forloop.counter|divisibleby:3 %}card-b--laranja{% endif %}"
-          href="#">
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.summary }}</p>
-            <span>Ler postagem ›</span>
-        </a>
-        {% empty %}
-        <p class="blog_else">Nenhuma publicação disponível no momento.</p>
-        {% endfor %}
-      </div>
+        <div class="blog__lista">
+            {% for post in posts %}
+            <a
+                class="card-b {% if forloop.counter|divisibleby:3 %}card-b--laranja{% endif %}"
+                href="#"
+                data-post-id="{{ post.id }}"
+            >
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.summary }}</p>
+                <span>Ler postagem ›</span>
+            </a>
+            {% empty %}
+            <p class="blog_else">Nenhuma publicação disponível no momento.</p>
+            {% endfor %}
+        </div>
     </div>
-  </section>
+</section>
+
+<div class="blog__dados-container" hidden>
+    {% for post in posts %}
+    <article class="blog__dados" data-post-id="{{ post.id }}">
+        <h1>{{ post.title }}</h1>
+
+        <span class="blog__data">
+            {{ post.created_at|date:"d/m/Y" }}
+        </span>
+
+        {% if post.image %}
+        <img
+            class="blog__imagem"
+            src="{{ post.image.url }}"
+            alt="{{ post.title }}"
+        >
+        {% endif %}
+
+        <div class="blog__texto">
+            {{ post.content|linebreaks }}
+        </div>
+    </article>
+    {% endfor %}
+</div>
+
+<!-- MODAL -->
+<div class="blog-modal" id="blog-modal" aria-hidden="true">
+    <div
+        class="blog-modal__janela"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Leitura da publicação"
+    >
+        <button class="blog-modal__voltar" type="button">
+            <span aria-hidden="true">‹</span> Voltar
+        </button>
+
+        <div class="blog-modal__corpo" id="blog-modal-corpo"></div>
+    </div>
+</div>

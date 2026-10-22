@@ -1,11 +1,10 @@
-<!-- ================= HABILIDADES ================= -->
+{% load static %}
   <section class="painel painel--dir habilidades" id="habilidades">
     <header class="painel__aba">
       <h2 class="painel__titulo">Habilidades</h2>
     </header>
 
     <div class="painel__corpo">
-      <!-- --n = nível da barra (0% a 100%) -->
       <ul class="niveis">
         {% for skill in skills %}
         <li class="nivel" style="--n: {{ skill.level }}%">

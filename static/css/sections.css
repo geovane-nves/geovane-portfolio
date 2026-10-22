@@ -1,19 +1,10 @@
-/* ==========================================================================
-   sections.css — Sobre, Habilidades, Experiências, Projetos, Blog e Contato
-   (v2.0). As "pastas" (.painel) vêm de style.css; aqui ficam só os conteúdos.
-   Dentro de cada corpo os blocos são posicionados com as medidas do layout
-   Desktop de 1366px (origem = canto superior esquerdo do .painel__corpo).
-   ========================================================================== */
-
 /* tamanhos usados só aqui */
 :root {
   --fs-destaque-info: 18px;   /* "Fora do terminal" (Red Rose) */
 }
 
 
-/* ==========================================================================
-   1. SOBRE MIM
-   ========================================================================== */
+/* 1. SOBRE MIM */
 .sobre { margin-top: 113px; }          /* a primeira pasta fica mais longe da faixa de tecnologias */
 .sobre .painel__corpo { height: 715px; }
 
@@ -104,9 +95,7 @@
 .info p { font-size: 16px; line-height: 30px; }
 
 
-/* ==========================================================================
-   2. HABILIDADES
-   ========================================================================== */
+/* 2. HABILIDADES */
 .habilidades .painel__corpo { height: 714px; }
 
 /* lista com barras de nível (--n = nível de 0 a 100%) */
@@ -177,9 +166,7 @@
 }
 
 
-/* ==========================================================================
-   3. EXPERIÊNCIAS (linha do tempo)
-   ========================================================================== */
+/* 3. EXPERIÊNCIAS (linha do tempo) */
 .experiencias__lista {
   position: relative;
   padding: 33px 55px 81px 148px;
@@ -224,9 +211,7 @@
 .experiencia p strong { font-weight: 700; }
 
 
-/* ==========================================================================
-   4. PROJETOS
-   ========================================================================== */
+/* 4. PROJETOS */
 .projetos .painel__corpo { height: 340px; }
 
 .projetos__lista {
@@ -256,9 +241,7 @@
 .card-p h3 { padding: 16px 20px; font-weight: 600; font-size: 15px; line-height: 23px; }
 
 
-/* ==========================================================================
-   5. BLOG ("Últimas notícias")
-   ========================================================================== */
+/* 5. BLOG ("Últimas notícias") */
 .blog .painel__corpo { height: 684px; }
 
 .blog_else{
@@ -282,22 +265,23 @@
   display: block;
   height: 264px;
   width: 300px;
-  padding: 19px 19px 0;
+  padding: 29px 27px 0;
   color: var(--texto-escuro);
   background: url('../images/projects/CartaoB.svg') no-repeat;
   background-size: 100% 100%;
   transition: transform .2s;
 }
 .card-b:hover { transform: translateY(-6px); }
-.card-b h3 { font-weight: 600; font-size: 15px; line-height: 23px; }
-.card-b p { width: 230px; margin-top: 14px; font-size: 12px; line-height: 15px; }
+.card-b h3 { font-weight: 600; font-size: 15px; line-height: 23px; color: var(--branco);}
+.card-b p { width: 230px; margin-top: 14px; font-size: 12px; line-height: 15px; color: var(--branco); }
 .card-b span {
   position: absolute;
   left: 19px;
-  bottom: 20px;
+  bottom: 30px;
   font-weight: 600;
   font-size: 11px;
   line-height: 16px;
+  color: var(--branco);
 }
 
 /* card laranja: o mesmo formato girado de cabeça para baixo */
@@ -315,10 +299,123 @@
 .card-b--laranja p { width: 209px; margin-top: 8px; padding-left: 14px; font-weight: 600; }
 .card-b--laranja span { left: 33px; }
 
+/* MODAL DO BLOG */
 
-/* ==========================================================================
-   6. CONTATO
-   ========================================================================== */
+.blog-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: rgba(25, 25, 25, 0.78);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.blog-modal--aberto {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+.blog-modal__janela {
+    position: relative;
+    width: min(1360px, 96%);
+    height: min(790px, 90vh);
+    overflow-y: auto;
+    padding: 80px 56px 48px;
+    color: #f5f1ed;
+
+    background-image: url("../images/shapes/modal-blog.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    border: none;
+    border-radius: 0;
+}
+
+
+.blog-modal--aberto .blog-modal__janela {
+    transform: translateY(0);
+}
+
+.blog-modal__voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: #f5f1ed;
+    font: inherit;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.blog-modal__voltar span {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.blog-modal__corpo {
+    margin-top: 48px;
+}
+
+.blog-modal__corpo h1 {
+    display: inline-block;
+    margin: 0 0 30px;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.blog-modal__corpo .blog__data {
+    float: right;
+    margin: 4px 0 20px 20px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #222;
+    font-size: 12px;
+}
+
+.blog-modal__corpo .blog__texto {
+    clear: both;
+    font-size: 15px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.blog-modal__corpo .blog__texto p {
+    margin: 0 0 16px;
+}
+
+.blog-modal__corpo .blog__texto p:last-child {
+    margin-bottom: 0;
+}
+
+.blog-modal__corpo .blog__imagem {
+    display: block;
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    margin: 0 0 24px;
+    border-radius: 12px;
+}
+
+body.blog-modal-aberto {
+    overflow: hidden;
+}
+
+
+/* 6. CONTATO */
 .contato .painel__corpo {
   height: 691px;
   overflow: hidden;
@@ -327,16 +424,16 @@
 
 .contato__titulo {
   position: absolute;
-  left: 57px;
-  top: 35px;
+  left: 80px;
+  top: 60px;
   font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: 56px;
-  line-height: 68px;
+  font-size: 46px;
+  line-height: 50px;
 }
 .contato__texto {
   position: absolute;
-  left: 52px;
+  left: 80px;
   top: 195px;
   width: 493px;
   text-align: justify;
@@ -383,7 +480,7 @@
   font-size: 12px;
   outline: none;
 }
-.form textarea { height: 167px; padding: 12px; resize: none; }
+.form textarea { height: 180px; padding: 12px; resize: none; }
 .form ::placeholder { color: rgba(255, 255, 255, .85); }
 .form input:user-invalid, .form textarea:user-invalid { border-color: #ff5a3c; }
 .form input:focus, .form textarea:focus { border-color: var(--laranja); }

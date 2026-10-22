@@ -1,9 +1,3 @@
-/* ==========================================================================
-   header.css — cabeçalho e navegação (v2.0)
-   Pílulas centralizadas; o item ativo ganha o fundo escuro (#191b1d).
-   O destaque do item ativo é aplicado por static/js/animations.js.
-   ========================================================================== */
-
 .navbar {
   position: sticky;
   top: 0;

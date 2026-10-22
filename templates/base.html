@@ -6,8 +6,6 @@
   <title>{% block title %}Geovane Neves | Portfólio{% endblock %}</title>
   <link rel="icon" href="{% static 'images/favicon.ico' %}">
 
-  <!-- Fontes do Google: Poppins (600), Quattrocento (títulos), Playfair Display (itálico da capa),
-       JetBrains Mono (mão ASCII) e Red Rose (NOVA na v2.0) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,600&family=Quattrocento:wght@400;700&family=Playfair+Display:ital@1&family=JetBrains+Mono&family=Red+Rose:wght@400;700&display=swap" rel="stylesheet">
@@ -22,7 +20,6 @@
 
 <body>
 
-  <!-- ================= MENU ================= -->
   <header class="navbar">
     <nav>
       <ul class="navbar__links">
@@ -41,7 +38,6 @@
     {% block content %}{% endblock %}
   </main>
 
-  <!-- ================= RODAPÉ ================= -->
   <footer class="footer">
     <div class="footer__marca">
       <img class="footer__avatar" src="{% static 'images/AvatarRodape.png' %}" alt="">
@@ -71,11 +67,11 @@
 
     <div class="footer__linha"></div>
 
-    <!-- palavra "Geovane" gigante (imagem com degradê que some para baixo; o rodapé corta o excesso) -->
     <img class="footer__gigante" src="{% static 'images/GeovaneRodape.png' %}" alt="" aria-hidden="true">
   </footer>
 
   <script src="{% static 'js/animations.js' %}"></script>
+  <script src="{% static 'js/modal-blog.js' %}"></script>
   {% block extra_js %}{% endblock %}
 </body>
 </html>

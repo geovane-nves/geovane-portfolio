@@ -11,3 +11,11 @@ def home(request):
     }
 
     return render(request, 'pages/home.html', context)
+
+
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug, published=True)
+
+    return render(request, 'pages/post_detail.html', {
+        'post': post
+    })
