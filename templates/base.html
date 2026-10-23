@@ -19,6 +19,15 @@
 </head>
 
 <body>
+  {% if messages %}
+  <div class="mensagem-overlay" id="mensagem-overlay">
+    <div class="mensagem-modal" role="status" aria-live="polite">
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 
   <header class="navbar">
     <nav>

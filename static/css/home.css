@@ -1,19 +1,11 @@
-/* ==========================================================================
-   home.css — apresentação inicial (v2.0)
-   Capa com a mão em ASCII + frase em inglês no centro, botão e faixa de
-   tecnologias logo abaixo.
-   ========================================================================== */
-
 .hero {
   position: relative;
-  height: 85vh;                       /* capa (595px) + faixa de tecnologias (40px) */
+  height: 85vh;                       
   overflow: hidden;
   container-type: inline-size;
   text-align: center;
 }
 
-/* mão em ASCII: é um <canvas> desenhado por static/js/animations.js
-   (largura = a da capa; a altura o JS calcula sozinho) */
 .hero__mao {
   position: absolute;
   top: 80px;
@@ -53,9 +45,8 @@
 .hero__btn:hover { background: var(--laranja); }
 
 
-/* ---------- FAIXA DE TECNOLOGIAS ---------- */
 .skills-faixa {
-  position: absolute;                  /* a faixa fica colada no pé da capa */
+  position: absolute;                  
   left: 0;
   right: 0;
   bottom: 0;

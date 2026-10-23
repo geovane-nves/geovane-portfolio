@@ -129,3 +129,9 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+import os
+
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+CONTACT_EMAIL = "geonevesrodrigues@gmail.com"
+DEFAULT_FROM_EMAIL = "onboarding@resend.dev"

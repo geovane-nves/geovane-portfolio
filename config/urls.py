@@ -22,5 +22,6 @@ from django.shortcuts import render, get_object_or_404
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name = 'home'),
-    path('blog/<slug:slug>/', views.post_detail, name='post_detail')
+    path('blog/<slug:slug>/', views.post_detail, name='post_detail'),
+    path("contato/", views.contato, name="contato")
 ]

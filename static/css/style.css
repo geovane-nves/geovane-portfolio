@@ -1,21 +1,9 @@
-/* ==========================================================================
-   style.css — estilos gerais (v2.0)
-   Fontes, variáveis, reset, textos comuns, botão e a "pasta" (painel) que
-   envolve as seções. Medidas tiradas do layout Desktop de 1366px.
-   ========================================================================== */
-
-
-/* ---------- FONTES ----------
-   Poppins: arquivos em static/fonts (o peso 600 vem do Google Fonts, no base.html).
-   Quattrocento, Playfair Display, JetBrains Mono e Red Rose: Google Fonts (base.html). */
 @font-face { font-family: 'Poppins'; font-weight: 300; src: url('../fonts/Poppins-Light.ttf'); }
 @font-face { font-family: 'Poppins'; font-weight: 400; src: url('../fonts/Poppins-Regular.ttf'); }
 @font-face { font-family: 'Poppins'; font-weight: 500; src: url('../fonts/Poppins-Medium.ttf'); }
 @font-face { font-family: 'Poppins'; font-weight: 700; src: url('../fonts/Poppins-Bold.ttf'); }
 @font-face { font-family: 'Poppins'; font-weight: 700; font-style: italic; src: url('../fonts/Poppins-BoldItalic.ttf'); }
 
-
-/* ---------- VARIÁVEIS ---------- */
 :root {
   color-scheme: dark;
 
@@ -52,7 +40,6 @@
 }
 
 
-/* ---------- RESET ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
@@ -65,6 +52,7 @@ body {
   font-size: var(--fs-corpo);
   line-height: var(--lh-corpo);
   overflow-x: hidden;
+  cursor: image-set(url("../images/cursor/Cursor.png") 2x) 0 0, auto;
 }
 
 ul { list-style: none; }
@@ -72,11 +60,26 @@ a { color: inherit; text-decoration: none; }
 img { display: block; }
 button, input, textarea { font: inherit; color: inherit; }
 
+button, a, .close_modal, .blog-modal__voltar{ cursor: image-set(url("../images/cursor/Cursor_pointer.png") 2x) 0 0, auto; }
 
-/* ---------- TEXTOS COMUNS ---------- */
+p, 
+h1, 
+h2, 
+h3, 
+span, 
+li,
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+  cursor: image-set(url("../images/cursor/Cursor_traço.png") 2x) 0 0, auto; 
+}
+
+
 .laranja { color: var(--laranja); }
 
-/* palavra em destaque: negrito, itálico e sublinhado pontilhado laranja */
 .hl {
   font-weight: 700;
   font-style: italic;
@@ -85,7 +88,6 @@ button, input, textarea { font: inherit; color: inherit; }
   text-underline-offset: 7px;
 }
 
-/* palavra em itálico serifado (capa e contato) */
 .destaque-capa {
   font-family: var(--fonte-capa);
   font-style: italic;
@@ -98,7 +100,6 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 
 
-/* ---------- BOTÃO ---------- */
 .btn {
   display: inline-block;
   height: 48px;
@@ -110,18 +111,9 @@ button, input, textarea { font: inherit; color: inherit; }
   font-weight: 600;
   font-size: 14px;
   line-height: 48px;
-  cursor: pointer;
 }
 .btn:hover { filter: brightness(1.12); }
 
-
-/* ---------- PAINEL ("pasta" com aba) ----------
-   <section class="painel painel--esq|painel--dir">
-     <header class="painel__aba"><h2 class="painel__titulo">…</h2></header>
-     <div class="painel__corpo">…</div>
-   </section>
-   A aba é um SVG (static/images/shapes/AbaEsq.svg e AbaDir.svg):
-   --esq = aba alta à esquerda e título à direita; --dir = o contrário. */
 .painel {
   position: relative;
   width: var(--largura-painel);
@@ -155,3 +147,42 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 .painel--esq .painel__corpo { border-top-right-radius: 20px; }
 .painel--dir .painel__corpo { border-top-left-radius: 20px; }
+
+.mensagem-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    animation: mensagem-aparecer 0.2s ease;
+}
+
+.mensagem-modal {
+    width: min(90%, 400px);
+    padding: 24px;
+    background: var(--);
+    color: var(--branco);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.mensagem-modal p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.mensagem-overlay.mensagem-fechar {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+@keyframes mensagem-aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

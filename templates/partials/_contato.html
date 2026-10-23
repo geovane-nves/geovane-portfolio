@@ -1,50 +1,55 @@
- {% load static %}
-  <section class="painel painel--dir contato" id="contato">
-    <header class="painel__aba">
-      <h2 class="painel__titulo">Contato</h2>
-    </header>
+{% load static %}
 
-    <div class="painel__corpo">
-      <h2 class="contato__titulo">
-        Bora construir algo<br>
-        <em class="destaque-capa destaque-capa--sublinhado">incrível</em> juntos?
-      </h2>
-      <p class="contato__texto">
-        <span class="laranja">Disponível</span> para projetos full stack, consultoria
-        técnica ou um bate papo virtual. Resposta em até 24h.
-      </p>
+<section class="painel painel--dir contato" id="contato">
+  <header class="painel__aba">
+    <h2 class="painel__titulo">Contato</h2>
+  </header>
 
-      <img class="contato__persona" src="{% static 'images/PersonaCafe.png' %}" alt="" aria-hidden="true">
+  <div class="painel__corpo">
+    <h2 class="contato__titulo">
+      Bora construir algo<br>
+      <em class="destaque-capa destaque-capa--sublinhado">incrível</em> juntos?
+    </h2>
 
-      <div class="janela">
-        <div class="janela__barra">
-          <span class="bolinha vermelha"></span>
-          <span class="bolinha amarela"></span>
-          <span class="bolinha verde"></span>
+    <p class="contato__texto">
+      <span class="laranja">Disponível</span> para projetos full stack, consultoria
+      técnica ou um bate papo virtual. Resposta em até 24h.
+    </p>
+
+    <img class="contato__persona" src="{% static 'images/PersonaCafe.png' %}" alt="" aria-hidden="true">
+
+    <div class="janela">
+      <div class="janela__barra">
+        <span class="bolinha vermelha"></span>
+        <span class="bolinha amarela"></span>
+        <span class="bolinha verde"></span>
+      </div>
+
+      <form class="form" action="{% url 'contato' %}" method="post">
+        {% csrf_token %}
+
+        <h3>Entre em contato por email</h3>
+
+        <label>Seu nome
+          <input type="text" name="nome" placeholder="Prof. João Silva" required>
+        </label>
+
+        <div class="form__linha">
+          <label>E-mail
+            <input type="email" name="email" placeholder="exemplo@email.com" required>
+          </label>
+
+          <label>Telefone / WhatsApp
+            <input type="tel" name="telefone" placeholder="(77) 9 9999-9999" pattern="[0-9\s\(\)\+\-]{8,}">
+          </label>
         </div>
 
-        <form class="form" action="mailto:geonevesrodrigues@gmail.com" method="post" enctype="text/plain">
-          <h3>Entre em contato por email</h3>
+        <label>Conteúdo
+          <textarea name="mensagem" required></textarea>
+        </label>
 
-          <label>Seu nome
-            <input type="text" name="nome" placeholder="Prof. João Silva" required>
-          </label>
-
-          <div class="form__linha">
-            <label>E-mail
-              <input type="email" name="email" placeholder="exemplo@email.com" required>
-            </label>
-            <label>Telefone / WhatsApp
-              <input type="tel" name="telefone" placeholder="(77) 9 9999-9999" pattern="[0-9\s\(\)\+\-]{8,}">
-            </label>
-          </div>
-
-          <label>Conteúdo
-            <textarea name="mensagem" required></textarea>
-          </label>
-
-          <button class="btn" type="submit">Enviar Mensagem →</button>
-        </form>
-      </div>
+        <button class="btn" type="submit">Enviar Mensagem →</button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>

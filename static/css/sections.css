@@ -357,7 +357,6 @@
     color: #f5f1ed;
     font: inherit;
     font-size: 15px;
-    cursor: pointer;
 }
 
 .blog-modal__voltar span {
@@ -441,8 +440,8 @@ body.blog-modal-aberto {
 .contato__persona {
   position: absolute;
   left: 110px;
-  top: 157px;
-  width: 380px;
+  top: 127px;
+  width: 400px;
 }
 
 /* janela + formulário */

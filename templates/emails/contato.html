@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="supported-color-schemes" content="dark">
+  <title>Nova mensagem recebida</title>
+
+  <style>
+    body, table, td, p, h1, a { margin: 0; padding: 0; }
+    table { border-collapse: collapse; }
+    img { border: 0; display: block; }
+
+    body {
+      background-color: #232323;
+      color: #ffffff;
+      font-family: 'Poppins', 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    .preheader {
+      display: none;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      mso-hide: all;
+    }
+
+    .outer { background-color: #232323; }
+    .wrapper { padding: 32px 16px; }
+
+    .card {
+      width: 100%;
+      max-width: 600px;
+      background-color: #2b2b2b;
+      border: 1px solid #3a3a3a;
+      border-radius: 16px;
+    }
+    .px { padding-left: 32px; padding-right: 32px; }
+
+    .window-bar { padding-top: 18px; padding-bottom: 18px; border-bottom: 1px solid #3a3a3a; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; font-size: 0; line-height: 0; }
+    .dot-red    { background-color: #ff5f57; }
+    .dot-yellow { background-color: #febc2e; }
+    .dot-green  { background-color: #28c840; }
+    .dot-gap    { width: 8px; font-size: 0; line-height: 0; }
+
+    .header { padding-top: 32px; padding-bottom: 8px; }
+    .eyebrow {
+      margin-bottom: 10px;
+      color: #e8502a;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .title { font-size: 26px; line-height: 1.25; font-weight: 600; color: #ffffff; }
+    .accent { color: #e8502a; }
+    .lead { margin-top: 12px; font-size: 15px; line-height: 1.6; color: #b5b5b5; }
+
+    .section { padding-top: 24px; padding-bottom: 8px; }
+    .info-box { background-color: #232323; border-radius: 12px; }
+    .info-inner { padding: 20px 22px; }
+
+    .label {
+      width: 90px;
+      padding: 6px 0;
+      font-size: 12px;
+      color: #8a8a8a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      vertical-align: top;
+    }
+    .value {
+      padding: 6px 0;
+      font-size: 15px;
+      color: #ffffff;
+      font-weight: 500;
+      vertical-align: top;
+    }
+    .link { color: #e8502a; text-decoration: none; word-break: break-all; }
+
+    .message-section { padding-top: 16px; padding-bottom: 8px; }
+    .message-line { width: 4px; background-color: #e8502a; border-radius: 4px; }
+    .message-body { padding: 4px 0 4px 18px; }
+    .message-label {
+      margin-bottom: 8px;
+      font-size: 12px;
+      color: #8a8a8a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .message-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #e6e6e6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .cta { padding-top: 24px; padding-bottom: 36px; }
+    .btn {
+      display: inline-block;
+      background-color: #e8502a;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 13px 26px;
+      border-radius: 8px;
+    }
+
+    .footer { padding-top: 20px; padding-bottom: 20px; border-top: 1px solid #3a3a3a; }
+    .footer-text { font-size: 12px; line-height: 1.6; color: #8a8a8a; }
+
+    @media only screen and (max-width: 620px) {
+      .wrapper { padding: 12px !important; }
+      .px      { padding-left: 20px !important; padding-right: 20px !important; }
+      .title   { font-size: 22px !important; }
+      .btn     { display: block !important; text-align: center !important; }
+      .label,
+      .value   { display: block !important; width: 100% !important; }
+      .label   { padding-bottom: 2px !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="preheader">{{ nome }} enviou uma mensagem pelo formulário do portfólio.</div>
+
+  <table role="presentation" width="100%" class="outer" bgcolor="#232323">
+    <tr>
+      <td align="center" class="wrapper">
+
+        <table role="presentation" width="600" class="card">
+
+          <tr>
+            <td class="px window-bar">
+              <table role="presentation">
+                <tr>
+                  <td class="dot dot-red" width="10" height="10">&nbsp;</td>
+                  <td class="dot-gap">&nbsp;</td>
+                  <td class="dot dot-yellow" width="10" height="10">&nbsp;</td>
+                  <td class="dot-gap">&nbsp;</td>
+                  <td class="dot dot-green" width="10" height="10">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="px header">
+              <p class="eyebrow">Portfólio · Contato</p>
+              <h1 class="title">Nova mensagem <span class="accent">recebida</span></h1>
+              <p class="lead">Você recebeu uma mensagem pelo formulário do portfólio.</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="px section">
+              <table role="presentation" width="100%" class="info-box">
+                <tr>
+                  <td class="info-inner">
+                    <table role="presentation" width="100%">
+                      <tr>
+                        <td class="label">Nome</td>
+                        <td class="value">{{ nome }}</td>
+                      </tr>
+                      <tr>
+                        <td class="label">E-mail</td>
+                        <td class="value"><a href="mailto:{{ email }}" class="link">{{ email }}</a></td>
+                      </tr>
+                      <tr>
+                        <td class="label">Telefone</td>
+                        <td class="value">{{ telefone }}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="px message-section">
+              <table role="presentation" width="100%">
+                <tr>
+                  <td class="message-line" width="4">&nbsp;</td>
+                  <td class="message-body">
+                    <p class="message-label">Mensagem</p>
+                    <p class="message-text">{{ mensagem }}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="px footer">
+              <p class="footer-text">
+                Mensagem enviada pelo formulário do seu portfólio.<br>
+                <span class="accent">Geovane</span> · geovanedev.com
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

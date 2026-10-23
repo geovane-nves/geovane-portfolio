@@ -119,3 +119,17 @@ if (secoes.length && 'IntersectionObserver' in window) {
   }, { rootMargin: '-40% 0px -55% 0px' });
   secoes.forEach(s => observador.observe(s));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("mensagem-overlay");
+
+    if (!modal) return;
+
+    setTimeout(() => {
+        modal.classList.add("mensagem-fechar");
+
+        setTimeout(() => {
+            modal.remove();
+        }, 200);
+    }, 3000);
+});
