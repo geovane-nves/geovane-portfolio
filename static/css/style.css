@@ -42,10 +42,15 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  overflow-x: clip;
+}
 
 body {
-  min-width: 1366px;
+  overflow-x: clip;
+  min-width: 0;
   background: var(--fundo);
   color: var(--branco);
   font-family: var(--fonte-texto);

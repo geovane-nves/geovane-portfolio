@@ -1,6 +1,5 @@
-/* tamanhos usados só aqui */
 :root {
-  --fs-destaque-info: 18px;   /* "Fora do terminal" (Red Rose) */
+  --fs-destaque-info: 18px;   
 }
 
 
@@ -23,7 +22,6 @@
   transform: translateX(-50%);
 }
 
-/* foto (Profile.png já traz a moldura, o fundo laranja e a fita) */
 .sobre__foto {
   position: absolute;
   left: 100px;
@@ -45,7 +43,7 @@
 /* texto */
 .sobre__texto {
   position: absolute;
-  left: 708px;
+  left: 840px;
   top: 59px;
   width: 729px;
 }
@@ -447,7 +445,7 @@ body.blog-modal-aberto {
 /* janela + formulário */
 .janela {
   position: absolute;
-  left: 720px;
+  left: 820px;
   top: 0px;
   width: 692px;
   height: 620px;

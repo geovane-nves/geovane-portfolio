@@ -4,6 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Geovane Neves | Portfólio{% endblock %}</title>
+  
+  <meta name="description" content="Portfólio de Geovane Neves, desenvolvedor web full stack. Conheça meus projetos, habilidades e experiências com desenvolvimento de software.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Geovane Neves | Desenvolvedor Web Full Stack">
+  <meta property="og:description" content="Conheça meus projetos, habilidades e experiências em desenvolvimento de software.">
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/og-image.png' %}">
+  <meta property="og:image:alt" content="Imagem de apresentação do portfólio de Geovane Neves">
+  <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+  <meta property="og:locale" content="pt_BR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Geovane Neves | Desenvolvedor Web Full Stack">
+  <meta name="twitter:description" content="Projetos, habilidades e experiências em desenvolvimento de software.">
+  <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/og-image.png' %}">
+
   <link rel="icon" href="{% static 'images/favicon.ico' %}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +31,7 @@
   <link rel="stylesheet" href="{% static 'css/home.css' %}">
   <link rel="stylesheet" href="{% static 'css/sections.css' %}">
   <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
   {% block extra_css %}{% endblock %}
 </head>
 
@@ -81,6 +98,7 @@
 
   <script src="{% static 'js/animations.js' %}"></script>
   <script src="{% static 'js/modal-blog.js' %}"></script>
+  <script src="{% static 'js/skills-marquee.js' %}"></script>
   {% block extra_js %}{% endblock %}
 </body>
 </html>

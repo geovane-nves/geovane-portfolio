@@ -48,7 +48,7 @@
 .footer__nav li a:hover { color: var(--laranja); }
 .footer__nav ul { margin-top: 7px; padding-left: 2px; }
 
-.footer__contato { position: absolute; left: 1534px; top: 66px; }
+.footer__contato { position: absolute; left: 1600px; top: 66px; }
 .footer__redes { display: flex; gap: 10px; margin-top: 5px; padding-left: 3px; }
 .footer__redes img { width: 34px; height: 34px; object-fit: contain; }
 .footer__redes a:hover { opacity: .7; }
@@ -58,7 +58,7 @@
   position: absolute;
   left: 52px;
   top: 287px;
-  width: 1700px;
+  width: 94%;
   height: 3px;
   background: var(--branco);
 }
