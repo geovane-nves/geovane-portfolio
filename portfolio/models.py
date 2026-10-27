@@ -7,6 +7,7 @@ class Skill(models.Model):
     category = models.CharField(max_length=50, blank=True)
     level = models.PositiveSmallIntegerField(default=50)
     order = models.PositiveIntegerField(default=0)
+    icon = models.CharField(max_length=100, blank=True)
     active = models.BooleanField(default=True)
 
     def __str__(self):

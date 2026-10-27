@@ -8,6 +8,7 @@ class SkillAdmin(admin.ModelAdmin):
     list_editable = ('level', 'active')
     list_filter = ('category', 'active')
     search_fields = ('name',)
+    list_display = ('name', 'category', 'icon', 'level', 'active')
 
 
 @admin.register(Experience)

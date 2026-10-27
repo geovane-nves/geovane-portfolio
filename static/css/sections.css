@@ -104,12 +104,12 @@
 }
 .nivel {
   display: grid;
-  grid-template-columns: 42px 178px 280px;
+  grid-template-columns: 42px 228px 280px;
   align-items: center;
   height: 67px;
 }
 .nivel img { height: 36px; width: auto; max-width: 34px; }
-.nivel__nome { font-weight: 500; font-size: 28px; line-height: 40px; white-space: nowrap; }
+.nivel__nome { font-weight: 500; font-size: 28px; line-height: 40px; white-space: nowrap; margin-left: 10px ; }
 
 .nivel__barra {
   position: relative;
@@ -132,7 +132,7 @@
 /* cartões do meio */
 .habilidades__cartoes {
   position: absolute;
-  left: 720px;
+  left: 770px;
   top: -15px;
   width: 379px;
   display: flex;
@@ -157,7 +157,7 @@
 /* persona */
 .habilidades__persona {
   position: absolute;
-  left: 1030px;
+  left: 1100px;
   top: -50px;
   width: 560px;
   pointer-events: none;

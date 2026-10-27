@@ -8,7 +8,9 @@
       <ul class="niveis">
         {% for skill in skills %}
         <li class="nivel" style="--n: {{ skill.level }}%">
-            <img src="{% static 'images/icons/Java.svg' %}" alt="">
+            {% if skill.icon %}
+                <img src="{% static 'images/icons/' %}{{ skill.icon }}" alt="{{ skill.name }}">
+            {% endif %}
             <span class="nivel__nome">{{ skill.name }}</span>
             <span class="nivel__barra"></span>
         </li>

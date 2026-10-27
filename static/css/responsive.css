@@ -514,8 +514,8 @@
   .nivel img { height: 28px; max-width: 28px; }
   .nivel__nome { font-size: 19px; }
   .habilidades__cartoes { margin-top: 32px; }
-  .cartao-escuro { height: auto; min-height: 130px; padding: 24px 28px; margin-bottom: 0; }
-  .cartao-escuro p { width: 100%; }
+  .cartao-escuro { height: auto; min-height: 130px; padding: 14px 30px; margin-bottom: 0; }
+  .cartao-escuro p { width: 100%; margin-top: 1px; }
   .habilidades__persona { display: block; width: min(70%, 320px); }
 
   .experiencias__lista { padding: 32px 28px 40px; }
@@ -572,6 +572,9 @@
   .footer__nav li { font-size: 15px; line-height: 26px; }
   .footer__redes img { width: 30px; height: 30px; }
   .footer__copy { font-size: 13px; }
+
+  .nivel { grid-template-columns: 30px 138px 1fr; }
+  .nivel__nome { font-size: 16px; margin-left: 10px; }
 }
 
 @media (min-width: 600px) and (max-width: 749px) {
@@ -708,8 +711,8 @@
   .sobre__redes { margin-top: 14px; }
 
   .habilidades .painel__corpo { display: block; padding: 24px 24px 0; }
-  .nivel { grid-template-columns: 34px 110px 1fr; height: 46px; }
-  .nivel__nome { font-size: 18px; }
+  .nivel { grid-template-columns: 34px 135px 1fr; height: 46px; }
+  .nivel__nome { font-size: 18px; margin-left: 5px; }
   .habilidades__cartoes { margin-top: 28px; }
   .cartao-escuro { height: 180px; min-height: 130px; padding: 24px 30px; margin-bottom: 0; }
   .cartao-escuro p { width: 100%; }
@@ -760,6 +763,8 @@
   .blog-modal__janela{background: none; }
   .blog-modal__corpo .blog__data{margin-top: -135px;}
 
+  .nivel { grid-template-columns: 30px 138px 1fr; }
+  .nivel__nome { font-size: 16px; margin-left: 10px; }
 
   .card-p img{height: 105px;}
   .card-p {height: 110px;}
@@ -790,8 +795,8 @@
   .card-b span {margin-left: 20px;}
 
   .form__linha { grid-template-columns: 1fr; }
-  .nivel { grid-template-columns: 30px 88px 1fr; }
-  .nivel__nome { font-size: 16px; }
+  .nivel { grid-template-columns: 30px 138px 1fr; }
+  .nivel__nome { font-size: 16px; margin-left: 10px; }
 }
 
 
