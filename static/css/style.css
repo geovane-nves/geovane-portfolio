@@ -58,6 +58,7 @@ body {
   line-height: var(--lh-corpo);
   overflow-x: hidden;
   cursor: image-set(url("../images/cursor/Cursor.png") 2x) 0 0, auto;
+  padding-top: 100px;
 }
 
 ul { list-style: none; }
