@@ -767,7 +767,7 @@
   .habilidades .painel__corpo { display: block; padding: 24px 24px 0; }
   .nivel { grid-template-columns: 34px 135px 1fr; height: 46px; }
   .nivel__nome { font-size: 18px; margin-left: 5px; }
-  .habilidades__cartoes { margin-top: 28px; }
+  .habilidades__cartoes { display: none; }
   .cartao-escuro { height: 180px; min-height: 130px; padding: 24px 30px; margin-bottom: 0; }
   .cartao-escuro p { width: 100%; }
   .habilidades__persona { display: none; }
@@ -811,6 +811,8 @@
   .cartao-escuro{ height: 170px; padding-left: 45px; margin-bottom: 20px;}
   .cartao-escuro p {width: 90%;}
   .habilidades__persona { display: none;}
+
+  .habilidades__cartoes{display: none;}
 
   .painel__titulo{ font-size: 15px; }
 
@@ -999,4 +1001,8 @@ body.blog-modal-aberto {
     body {
         padding-top: 60px;
     }
+}
+
+@media(max-width: 380px){
+  
 }
