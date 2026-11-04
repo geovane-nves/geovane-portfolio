@@ -765,7 +765,7 @@
   .sobre__redes { margin-top: 14px; }
 
   .habilidades .painel__corpo { display: block; padding: 24px 24px 0; }
-  .nivel { grid-template-columns: 34px 135px 1fr; height: 46px; }
+  .nivel { grid-template-columns: 34px 135px 1fr; height: 46px; margin-bottom: 30px;}
   .nivel__nome { font-size: 18px; margin-left: 5px; }
   .habilidades__cartoes { display: none; }
   .cartao-escuro { height: 180px; min-height: 130px; padding: 24px 30px; margin-bottom: 0; }
